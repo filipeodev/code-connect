@@ -1,0 +1,16 @@
+.ul {
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.li {
+    color: #888888;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 150%;
+    margin: 0 10px;;
+}

@@ -1,0 +1,28 @@
+.aside {
+    border-radius: 8px;
+    background: #171D1F;
+    padding: 40px 16px;
+
+
+
+/* Auto layout */
+/* display: flex;
+flex-direction: column;
+align-items: center;
+gap: 80px;
+
+margin: 0 auto;
+width: 177px;
+max-width: 282px;
+height: 1531px; */
+
+/* Cinza Escuro */
+
+
+/* Inside auto layout */
+/* flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0; */
+
+}
