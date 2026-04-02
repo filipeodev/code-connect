@@ -274,3 +274,26 @@
 {"level":"info","message":"Posts recuperados"}
 {"level":"info","message":"Posts recuperados"}
 {"level":"info","message":"Posts recuperados"}
+{"error":{"clientVersion":"5.22.0","code":"P2022","meta":{"column":"Post.bodu","modelName":"Post"},"name":"PrismaClientKnownRequestError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","code":"P2022","meta":{"column":"Post.bodu","modelName":"Post"},"name":"PrismaClientKnownRequestError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","code":"P2022","meta":{"column":"Post.bodu","modelName":"Post"},"name":"PrismaClientKnownRequestError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","code":"P2022","meta":{"column":"Post.bodu","modelName":"Post"},"name":"PrismaClientKnownRequestError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","code":"P2022","meta":{"column":"Post.bodu","modelName":"Post"},"name":"PrismaClientKnownRequestError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
+{"error":{"clientVersion":"5.22.0","name":"PrismaClientValidationError"},"level":"error","message":"Falha ao obter posts"}
