@@ -2,6 +2,7 @@ import { CardPost } from "@/components/CardPost";
 import logger from "@/logger";
 import Link from "next/link";
 import db from "../../prisma/db";
+import SearchForm from "@/components/SearchForm";
 
 // const post = {
 //   "id": 1,
@@ -18,11 +19,38 @@ import db from "../../prisma/db";
 //   }
 // }
 
-async function getAllPosts(page) {
+async function getAllPosts(page, busca) {
   try {
-    const posts = await db.post.findMany();
 
-    return { data: posts, prev: null, next: null }
+    const where = {}
+
+    if (busca) {
+      where.title = {
+        contains: busca,
+        mode: 'insensitive'
+      }
+    }
+
+    const perPage = 2;
+    const skip = (page - 1) * perPage;
+
+    const totalItems = await db.post.count({ where });
+    const totalPages = Math.ceil(totalItems / perPage);
+
+    const prev = page > 1 ? page - 1 : null;
+    const next = page < totalPages ? page + 1 : null;
+
+    const posts = await db.post.findMany({
+      take: perPage,
+      orderBy: { createdAt: 'desc' },
+      skip: skip,
+      where,
+      include: {
+        author: true
+      }
+    });
+
+    return { data: posts, prev, next }
   } catch (error) {
     logger.error('Falha ao obter posts', { error})
     return { data: [], prev: null, next: null }
@@ -30,17 +58,22 @@ async function getAllPosts(page) {
 }
 
 export default async function Home({ searchParams }) {
-  const currentPage = searchParams?.page || 1
-  const { data: posts, prev, next } = await getAllPosts(currentPage)
-
+  const currentPage = parseInt(searchParams?.page || 1);
+  const busca = searchParams?.q;
+  const { data: posts, prev, next } = await getAllPosts(currentPage, busca)
   return (
-    <main className='main'>
-      {posts.map(post => <CardPost key={post.id} post={post} />)}
-      <div className="centralize_link_paginate">
-        {prev && <Link className="link_paginate" href={`/?page=${prev}`}>Pagina anterior</Link>}
-        {next && <Link className="link_paginate" href={`/?page=${next}`}>Próxima pagina</Link>}
+    <>
+      <div style={{ width: 100 + '%' }}>
+        <SearchForm />
+        <main className='main'>
+          {posts.map(post => <CardPost key={post.id} post={post} />)}
+          <div className="centralize_link_paginate">
+            {prev && <Link className="link_paginate" href={{ pathname: '/', query: { page: prev, q: busca }}}>Pagina anterior</Link>}
+            {next && <Link className="link_paginate" href={{ pathname: '/', query: { page: next, q: busca }}}>Próxima pagina</Link>}
+          </div>
+        </main>
       </div>
-    </main>
+    </>
   )
 }
 

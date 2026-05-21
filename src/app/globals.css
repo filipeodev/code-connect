@@ -10,7 +10,7 @@ body {
     margin: 56px auto;
     display: flex;
     gap: 28px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .main {
@@ -24,6 +24,7 @@ body {
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
+    margin-right: 16px;
 }
 
 .centralize_link_paginate {
@@ -31,4 +32,25 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.title_error {
+    color: #81FE88;
+    font-size: 37px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.description_error {
+    color: #BCBCBC;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.center_infor_error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

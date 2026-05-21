@@ -4,34 +4,34 @@ import html from 'remark-html'
 import { CardPost } from "@/components/CardPost";
 
 import styles from './page.module.css'
+import db from "../../../../prisma/db";
+import { redirect } from "next/navigation";
 
 async function getPostBySlyg(slug) {
-    const url = `http://localhost:3042/posts?slug=${slug}`
+    try {
+        const post = await db.post.findUnique({
+            where: {slug: slug},
+            include: {
+                author: true
+            }
+        });
 
-    const response = await fetch(url)
-  
-    if (!response.ok) {
-        logger.error('Ops, alguma coisa correu mal')
-        return {}
+        if (!post) throw new Error(`Post ${slug} inexistente`);
+
+        const processedContent = await remark()
+        .use(html)
+        .process(post.markdown);
+
+        const contentHtml = processedContent.toString();
+
+        post.markdown = contentHtml
+
+        return post
+    } catch (error) {
+        logger.error('Falha ao obter post', { error, slug });
     }
-    logger.info('Posts recuperados')
-    const data = await response.json()
 
-    if (data.length == 0) {
-        return {}
-    }
-
-    const post = data[0]
-
-    const processedContent = await remark()
-    .use(html)
-    .process(post.markdown);
-
-    const contentHtml = processedContent.toString();
-
-    post.markdown = contentHtml
-
-    return post
+    redirect('/not-found');
 }
 
 export default async function PagePost ({params}) {

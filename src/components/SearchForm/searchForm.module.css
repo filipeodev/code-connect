@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 990px;
+    width: 100%;
+    padding: 16px 8px 16px 8px;
+    border-radius: 8px;
+}
+
+.input:focus {
+    border-color: #81FE88;
+}
+
+.input:focus-visible {
+    border-color: #81FE88;
+}
+
+.icon {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+}
