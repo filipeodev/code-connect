@@ -1,7 +1,4 @@
-import styles from './searchform.module.css';
-import { Search } from 'lucide-react';
-import db from '../../../prisma/db';
-import logger from '@/logger';
+import styles from './searchForm.module.css';
 import Button from '../Button';
 
 export default function SearchForm() {
