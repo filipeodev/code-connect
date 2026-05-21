@@ -1,0 +1,17 @@
+# Forçar detecção de linguagens para as estatísticas do GitHub/GitLab
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.css linguist-language=CSS
+*.prisma linguist-language=Prisma
+Dockerfile linguist-language=Dockerfile
+docker-compose.yaml linguist-language=Yaml
+
+# Marcar pastas de recursos ou assets como documentação/gerados 
+# para não poluirem o gráfico de linguagens principal
+public/**/* linguist-documentation
+recusos_do_curso/**/* linguist-documentation
+api/posts.json linguist-generated
+prisma/migrations/**/* linguist-generated
+
+# Garantir que arquivos de texto usem LF (Line Feed) para evitar problemas entre Windows/Linux
+* text=auto eol=lf
